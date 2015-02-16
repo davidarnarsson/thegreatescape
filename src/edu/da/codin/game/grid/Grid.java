@@ -64,9 +64,6 @@ public class Grid {
     }
 
     public void moveEntity(Entity e, Coord nc) {
-        GridBoundsLimiter limiter = new GridBoundsLimiter(this);
-        if (!limiter.canMove(nc)) return;
-
         getCell(e).remove(e);
         getCell(nc).add(e);
         e.setCoordinates(nc);
